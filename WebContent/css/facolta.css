@@ -1,0 +1,91 @@
+@CHARSET "UTF-8"
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@font-face {
+   font-family: 'SanFrancisco';
+   src: url("images/font/SFText-Light.otf");
+}
+@font-face {
+   font-family: 'SanFranciscoR';
+   src: url("../images/font/SFText-Regular.otf");
+}
+@font-face {
+   font-family: 'SanFranciscoB';
+   src: url("../images/font/SFText-Bold.otf");
+}
+/* General */
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2{
+	font-family: 'Lobster', cursive;
+}
+
+h3{
+    font-family: 'SanFranciscoR', sans-serif;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+	font-family: 'SanFrancisco', sans-serif;
+	font-weight: 400;
+	font-size: 12pt;
+	line-height: 1.8;
+}
+
+section{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+	flex-direction: column;
+    height: 2000px;
+	width: 100%;
+}
+
+section div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	flex-direction: row;
+    width: 100%;
+}
+
+section div div{
+    z-index: 1;
+    position: relative;
+	height: 240px;
+    width: 320px;
+	border-radius: 15px;
+    background-size: cover;
+	overflow: hidden;
+}
+
+section div div a img{
+    height: 240px;
+    width: 320px;
+    border-radius: 15px;
+	transition: transform .5s ease;
+}
+
+section div div a img:HOVER{
+    transform: scale(1.1);
+}
+
+section div div .label{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+	border-radius: 0px 0px 15px 15px;
+    background-color: rgb(45, 156, 66);
+}
+
+section div div .label h2{
+    font-family: "Lobster";
+    font-size: 17pt;
+    color: white;
+}
