@@ -1,10 +1,17 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@page import="Beans.LibroBeans"%>
+<%@page import="java.awt.List"%>
+<%@page import="beans.LibroBeans"%>
 <%@page import="java.util.ArrayList"%>
-<jsp:useBean id="utente" class="Beans.UtenteBeans" scope="session"></jsp:useBean>
+
+<% ArrayList<String> corsi = (ArrayList<String>) request.getAttribute("corsi"); %>
+<% ArrayList<String> facolta = (ArrayList<String>) request.getAttribute("facolta"); %>
+<% ArrayList<String> universita = (ArrayList<String>) request.getAttribute("universita"); %>
+
+<jsp:useBean id="utente" class="beans.UtenteBeans" scope="session"></jsp:useBean>
 <html>
 <head>
+<script type="text/javascript" src="script/aggiungiPreferitiScript.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/ricerca.css">
 <title>Teach Me</title>
@@ -15,35 +22,42 @@
 
     <section>
 		<div id="top">
-			<div>
-			<form >
-		
- 	 		<input type="radio" name="tipo" value="appunti" > appunti
- 		    <input type="radio" name="tipo" value="lezioni"> lezioni
-		    <input type="radio" name="tipo" value="libri"checked> libri  
-			 
+			<form>
+				<input type="radio" name="tipo" value="appunti" ><p>Appunti</p>
+ 		    		<input type="radio" name="tipo" value="lezioni"><p>Lezioni</p>
+		    		<input type="radio" name="tipo" value="libri"checked><p>Libri</p>  
+		    		
 				<select name="universita">
-  					<option value="unisa">Fisciano</option>
+  					<%for(String u: universita){%>
+  						<option value="<%= u %>"><%= u %></option>
+  					
+  					<%} %>	
 				</select>
 				<select name="facolta">
-  					<option value="informatica">Informatica</option>
-					<option value="matematica">Matematica</option>
+  					<%for(String f: facolta){%>
+  						<option value="<%= f %>"><%= f %></option>
+  					
+  					<%} %>	
 				</select>
 				<select name="corso">
-  					<option value="C">Programmazione C</option>
-					<option value="algoritmi">Algoritmi</option>
-					<option value="java">Java</option>
-					<option value="analisi">Analisi</option>
-					
-					<input type="button" value="cerca" onclick="fun(this.form.elements)"/>
+  					<%for(String c: corsi){%>
+  						<option value="<%= c  %>"><%= c %></option>
+  					
+  					<%} %>	
 				</select>
+				
+				<%if(!utente.isLogin()){ %>
+					<div><input type="button" value="Cerca" onclick="passaggioParamRicercaALT(this.form.elements)"/></div>
+				<%}else{%>
+					<div><input type="button" value="Cerca" onclick="passaggioParamRicerca(this.form.elements)"/></div>
+				<%}%>
+
 			</form>
-			</div>
 		</div>
 
 		<div id="bot">
-			<div>	
-				<h3 id="res"></h3>
+			<div>
+				<h3 id="res"></h3>	
 			</div>
 		</div>
     </section>
@@ -51,36 +65,4 @@
 </body>
 </html>
 
-<script>
-function fun(valore){
-	
-	ajax= new XMLHttpRequest();
-	
-	if(valore[0].checked){
-		ajax.open("get","http://localhost:8080/Progetto/Acquisti?corso="+valore["corso"].value+"&tipo="+valore[0].value+"&facolta="+valore["facolta"].value+"&universita="+valore["universita"].value,true);	
-	}
-	if(valore[1].checked){
-		ajax.open("get","http://localhost:8080/Progetto/Acquisti?corso="+valore["corso"].value+"&tipo="+valore[1].value+"&facolta="+valore["facolta"].value+"&universita="+valore["universita"].value,true);	
-	}
-	if(valore[2].checked){
-		ajax.open("get","http://localhost:8080/Progetto/Acquisti?corso="+valore["corso"].value+"&tipo="+valore[2].value+"&facolta="+valore["facolta"].value+"&universita="+valore["universita"].value,true);	
-	}
-	
-	
-	ajax.setRequestHeader("connection", "close");
 
-	ajax.onreadystatechange = function() {
-		  if(ajax.readyState === 4) {
-		  if(ajax.status == 200)
-		   document.getElementById("res").innerHTML=ajax.responseText;
-		  else
-		    alert("Operazione fallita, errore numero " + ajax.status);
-		  }
-		}
-	ajax.send(null);
-	
-	function funCarr(ogg){
-		alert("ciaoo")
-	}
-}
-</script>

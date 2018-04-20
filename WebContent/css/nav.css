@@ -56,7 +56,8 @@ nav #SX{
 	jiustify-content: flex-start;
 	align-items: center;
 	width: 50%;
-	padding-left: 100px;
+	padding-left: 7.5vw;
+	box-sizing: border-box;
 }
 
 nav #SX div{
@@ -71,8 +72,9 @@ nav #DX{
 	display:flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding-right: 70px;
+	padding-right: 5vw;
 	width: 50%;
+	box-sizing: border-box;
 }
 
 nav #DX div{

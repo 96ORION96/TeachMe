@@ -1,10 +1,10 @@
 package Connessione;
 import java.util.ArrayList;
 
-import Beans.AppuntiBeans;
-import Beans.LezioneBeans;
-import Beans.LibroBeans;
-import Beans.UtenteBeans;
+import beans.AppuntiBeans;
+import beans.LezioneBeans;
+import beans.LibroBeans;
+import beans.UtenteBeans;
 
 public class User{
 	

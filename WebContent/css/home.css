@@ -15,6 +15,7 @@
 /* General */
 
 body{
+	flex-direction: column;
 	margin: 0;
 	padding: 0;
 }
@@ -38,7 +39,7 @@ button{
 	font-family: 'SanFrancisco', sans-serif;
 	font-weight: 400;
 	font-size: 12pt;
-	color: rgb(174, 181, 188);
+	color: rgb(174, 181, 188);     
 }
 
 button:HOVER{
@@ -78,9 +79,8 @@ header{
 
 header #SX{
 	display: flex;
-	justify-content: flex-start;
 	align-items: flex-end;
-	padding-left: 100px;
+	padding-left: 7.5vw;
 	height: 100%;
 	width: 50%;
 }
@@ -88,7 +88,7 @@ header #SX{
 header #SX div h1{
 	margin: 0;
 	padding: 0;
-	font-size: 500%;
+	font-size: 60pt;
 	color:  white;
 }
 
@@ -97,8 +97,8 @@ header #DX{
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: flex-end;
-	padding-right: 100px;
-	padding-bottom: 40px;
+	padding-right: 7.5vw;
+	padding-bottom: 37px;
 	height: 100%;
 	width: 50%;
 }
@@ -108,8 +108,8 @@ header #DX #top{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin-left: 15px;
-	margin-right: 15px;
+	padding-left: 2vw;
+	padding-right: 2vw;
 }
 
 header #DX #top button{
@@ -138,6 +138,7 @@ header #DX #top #button{
 header #DX #top #button a{
 	height: 100%;
 	width: 100%;
+	border-radius: 7px;
 	font-family: 'SanFrancisco', sans-serif;
 	line-height: 25px;
 	text-decoration: none;
@@ -179,37 +180,25 @@ header #DX #bot a button{
 	height: 25px;
 	width: 300px;
 	text-align: center;
-	padding-left: 15px;
-	background-image: url("../images/home/search.png");
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
-    background-position: 110px 5px;
     background-color: white;
 	border-radius: 7px;
 	border: hidden;
 }
 
-/*header #DX #bot input:FOCUS{
-	background-position: 5px 5px;
-    text-align: left;
-    padding-left: 15px;
-}*/
+header #DX #bot a button:ACTIVE{
+	color: rgb(45, 156, 66);
+}
 
 header #DX #login{
 	position: absolute;
 	top: 105px;
 	display: none;
-	justify-content: center;
-	align-items: center;
-	flex-direction:column;
 	z-index: 3;
 	font-family: 'SanFrancisco', sans-serif;
 	font-weight: 400;
 	line-height: 1.8;
 	font-size: 12pt;
-	padding-top: 30px;
-	padding-bottom: 20px;
-	height: 250px;
+	height: 300px;
 	width: 300px;
 	border-radius: 7px;
 	background-color: rgb(241, 241, 241);
@@ -221,18 +210,28 @@ header #DX #login.open{
 
 header #DX #login form{
 	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+header #DX #login form #top{
+	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	flex-direction: column;
 }
 
-header #DX #login form p{
-	margin-left: 5px;
+header #DX #login form #top p{
+	text-align: left;
 	margin-bottom: 0px;
-	margin-top: 5px;
+	margin-top: 0px;
+	margin-left: 5px;
+	width: 100%;
 }
 
-header #DX #login form input{
+header #DX #login form #top input{
 	height: 25px;
 	width: 250px;
 	border: 1px solid;
@@ -240,19 +239,18 @@ header #DX #login form input{
 	border-color: rgb(241, 241, 241);
 }
 
-header #DX #login form div{
+header #DX #login form #bot{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 }
 
-header #DX #login form div input{
+header #DX #login form #bot input{
 	transition: width .3s ease;
 	height: 30px;
 	width: 100px;
 	cursor: pointer;
-	margin-top: 30px;
 	border: 2px solid;
 	border-color: rgb(45, 156, 66);
 	border-radius: 7px;
@@ -260,18 +258,13 @@ header #DX #login form div input{
 	color: white;
 }
 
-header #DX #login form div input:HOVER{
+header #DX #login form #bot input:HOVER{
 	width: 130px;
 }
 
-header #DX #login form div input:ACTIVE{
+header #DX #login form #bot input:ACTIVE{
+	border-color: white;
 	background-color: white;
-	color: rgb(45, 156, 66);
-}
-
-header #DX #login a{
-	margin-top: 35px;
-	text-decoration: none;
 	color: rgb(45, 156, 66);
 }
 
@@ -435,14 +428,16 @@ section{
 
 #container #slider .sliders .label h2{
 	margin-top: 15px;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 	padding-left: 30px;
+	padding-right: 30px;
 	color: white;
 }
 
 #container #slider .sliders .label p{
-	margin-top: 0px;
+	margin-top: 0;
 	padding-left: 30px;
+	padding-right: 30px;
 	color: white;
 }
 
@@ -455,7 +450,7 @@ section{
 	left: 50%;
 	transform: translate(-50%, 0%);
 	height: 38px;
-	width: 7%;
+	width: 80px;
 	background-color: white;
 }
 
@@ -470,9 +465,12 @@ section{
 
 aside{
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	height: 900px;
+	padding-left: 8vw;
+	padding-right: 8vw;
+	box-sizing: border-box;
 	background-color: rgb(241, 241, 241);
 }
 
@@ -480,6 +478,7 @@ aside .column{
 	display: flex;
 	flex-direction: column;
 	margin: 30px;
+	height: 730px;
 	width: 320px;
 	background-color: rgb(241, 241, 241);
 }
@@ -533,18 +532,21 @@ aside .column .bot{
 }
 
 aside .column .bot h2{
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	width: 85%;
 	text-align: center;
     font-weight: 400;
 }
 
 aside .column .bot p{
-	margin:0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
+	height: 50%;
 	width: 85%;
 	text-align: justify;
+	overflow: hidden;
+	
 }
 
 aside .column .bot div{
@@ -565,7 +567,9 @@ aside .column .bot div:HOVER{
 }
 
 aside .column .bot div:ACTIVE{
-	background-color: white;
+	border-color: rgb(241, 241, 241);
+	background-color: rgb(241, 241, 241);
+	color: rgb(45, 156, 66);
 }
 
 aside .column .bot div a{
@@ -585,8 +589,124 @@ aside .column .bot a:ACTIVE{
 	color: rgb(45, 156, 66);
 }
 
+#help{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 290px;
+	width: 100%;
+	border-bottom: 1px solid;
+	border-color: rgb(241, 241, 241);
+	background-color: white;
+}
 
+#help #padredimerda{
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 80%;
+}
+
+#help #padredimerda #SX{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	width: 20%;
+}
+
+#help #padredimerda #SX #label{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	width: 150px;
+	border-radius: 10px;
+	background-color: rgb(241, 241, 241);
+}
+
+#help #padredimerda #SX #label img{
+	height: 100px;
+	width: 100px;
+}
+
+#help #padredimerda #DX{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100%;
+	width: 80%; 
+}
+
+#help #padredimerda #DX #label{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	width: 800px;
+	border-radius: 10px;
+	background-color: rgb(241, 241, 241);
+}
+
+#help #padredimerda #DX #label #sx{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 75%;
+	padding-left: 40px;
+}
+
+#help #padredimerda #DX #label #dx{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 25%;
+}
+
+#help #padredimerda #DX #label #dx div{
+	transition: width .3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	width: 100px;
+	border: 2px solid;
+	border-color: rgb(45, 156, 66);
+	border-radius: 7px;
+	background-color: rgb(45, 156, 66);
+}
+
+#help #padredimerda #DX #label #dx div:HOVER{
+	width: 130px;
+}
+
+#help #padredimerda #DX #label #dx div:ACTIVE{
+	border-color: white;
+	background-color: white;
+}
+
+#help #padredimerda #DX #label #dx div a{
+	height: 100%;
+	width: 100%;
+	transition: color .2s ease;
+	font-family: 'SanFrancisco', sans-serif;
+	font-weight: 400;
+	font-size: 15pt;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+}
+
+#help #padredimerda #DX #label #dx div a:ACTIVE{
+	color: rgb(45, 156, 66);
+}
 /* Footer */
+footer{
+	height: 350px;
+	width: 100%;
+}
 
 footer #TOP{
 	height: 290px;
@@ -614,7 +734,6 @@ footer #TOP #bot{
 
 footer #TOP #bot p{
 	text-align: center;
-	color: rgb(45, 156, 66);
 }
 
 footer #BOT{
@@ -622,7 +741,8 @@ footer #BOT{
 	justify-content: flex-end;
 	align-items: center;
 	height: 60px;
-	padding-right: 20px;
+	padding-left: 2vw;
+	padding-right: 2vw;
 	background-color: rgb(45, 156, 66);
 }
 

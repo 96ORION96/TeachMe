@@ -46,47 +46,162 @@ input{
 
 section{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    height: 85vh;
+    height: 84vh;
 }
 
 section #top{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 8vh;
+    height: 10%;
     width: 100%;
 }
 
-section #top div{
+section #top form{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	flex-direction: row;
     font-family: 'SanFrancisco', sans-serif;
 	font-weight: 400;
 	font-size: 12pt;
 	line-height: 1.8;
-    height: 80%;
+    height: 85%;
     width: 85%;
     border-radius: 15px;
     background-color: rgb(241, 241, 241);
+}
+
+section #top form p{
+	padding-left: 5px;
+	margin-right: 5px;
+}
+
+input[type='radio']{
+	margin-left: 5px;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+	left: -1px;
+    position: relative;
+    background-color: white;
+    content: '  ';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(45, 156, 66);
+    content: '  ';
+    display: inline-block;
+	visibility: visible;
+    border: 2px solid white;
+}
+    
+section #top form select{
+	font-family: 'SanFrancisco', sans-serif;
+	font-weight: 400;
+	font-size: 12pt;
+	height: 25px;
+	width: 200px;
+	margin-left: 5px;
+	border-color: rgb(45, 156, 66);
+	background-color: rgb(45, 156, 66);
+	color: white;
+}
+
+section #top form div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	heigh: 100%;
+	width: 110px;
+}
+
+section #top form div input{
+	font-family: 'SanFrancisco', sans-serif;
+	font-weight: 400;
+	font-size: 12pt;
+ 	transition: width .3s ease;
+	height: 30px;
+	width: 70px;
+	cursor: pointer;
+	border: 2px solid;
+	border-color: rgb(45, 156, 66);
+	border-radius: 5px;
+	background-color: rgb(45, 156, 66);
+	color: white;
+	
+}
+
+section #top form div input:HOVER{
+	width: 100px;
+}
+
+section #top form div input:ACTIVE{
+	border-color: white;
+	background-color: white;
+	color: rgb(45, 156, 66);
 }
 
 section #bot{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 77vh;
+    height: 85%;
     width: 100%;
 }
 
 section #bot div{
+	display:flex;
+	flex-grow: 0;
+	flex-shrink: 0;
     height: 95%;
     width: 85%;
     border-radius: 15px;
     background-color: rgb(241, 241, 241);
+    overflow: auto;
 }
 
-section #bot div h3{
+section #bot div #res{
+	font-family: 'SanFrancisco', sans-serif;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	width: 100%;
+}
+
+section #bot div #res button{
+	font-family: 'SanFrancisco', sans-serif;
+	font-weight: 400;
+	font-size: 12pt;
+	margin-left: 10px;
+	transition: width .3s ease;
+	height: 25px;
+	width: 165px;
+	cursor: pointer;
+	border: 2px solid;
+	border-color: rgb(45, 156, 66);
+	border-radius: 5px;
+	background-color: rgb(45, 156, 66);
+	color: white;
+}
+
+section #bot div #res button:ACTIVE{
+	border-color: white;
+	background-color: white;
+	color: rgb(45, 156, 66);
 }
