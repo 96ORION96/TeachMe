@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+@media all and (min-width: 0px) and (max-width: 750px){
+	nav #SX{
+		display: none;
+	}
+	
+	nav #DX{
+		justify-content: space-around;
+		width: 100%;
+		padding: 0;
+	}
+}
+
+@media all and (min-width: 0px) and (max-width: 330px){ /*iphone SE*/
+	header{
+		height: 120px;
+	}
+	
+	header #SX{
+		width: 85%;
+	}
+	
+	header #SX div h1{
+		font-size: 33pt;
+	}
+	
+	header #DX{
+		width: 15%;
+		padding-bottom: 20px;
+	}
+	
+	header #DX #top{
+		display: none;
+	}
+	
+	header #DX #bot a button{
+		width: 60px;
+	}
+	
+	#container{
+		height: 330px;
+	}
+	
+	#container img{
+		display: none;
+	}
+	
+	#container #slider{
+		height: 240px;
+	}
+	
+	#container #slider img{
+		display: block;
+	}
+	
+	#container #slider .sliders{
+		height: 240px;
+	}
+	
+	#container #slider .sliders h2{
+		text-align: center;
+		padding-bottom: 15px;
+	}
+	
+	#container #slider .sliders p{
+		display: none;
+	}
+	
+	aside{
+		flex-direction: column;
+		height: 1630px;
+	}
+}
+
+@media all and (min-width: 330px) and (max-width: 415px){ /*iphone 7 e plus*/
+	header{
+		height: 120px;
+	}
+	
+	header #SX{
+		width: 85%;
+	}
+	
+	header #SX div h1{
+		font-size: 33pt;
+	}
+	
+	header #DX{
+		width: 15%;
+		padding-bottom: 20px;
+	}
+	
+	header #DX #top{
+		display: none;
+	}
+	
+	header #DX #bot a button{
+		width: 60px;
+	}
+	
+	#container{
+		height: 400px;
+	}
+	
+	#container img{
+		height: 50px;
+		width: 20px;
+	}
+	
+	#container #slider{
+		height: 320px;
+	}
+	
+	aside{
+		flex-direction: column;
+		height: 1630px;
+	}
+}
+
+@media all and (min-width: 415px) and (max-width: 770px){ /*ipad mini e normal*/
+	header{
+		height: 120px;
+	}
+	
+	header #SX{
+		width: 85%;
+	}
+	
+	header #SX div h1{
+		font-size: 50pt;
+	}
+	
+	header #DX{
+		width: 15%;
+		padding-bottom: 20px;
+	}
+	
+	header #DX #top{
+		display: none;
+	}
+	
+	header #DX #bot a button{
+		width: 90px;
+	}
+	
+	#container img{
+		height: 100px;
+		width: 70px;
+	}
+	
+}
+
+@media all and (min-width: 770px) and (max-width: 850px){ /*ipad pro*/
+
+}
+
+@media all and (min-width: 850px) and (max-width: 1025px){ /*ipad pro 12*/
+
+}
+
+@media all and (min-width: 1025px) and (max-width: 1200px){ /*ipad pro*/
+
+}
+
+@media all and (min-width: 1300px) and (max-width: 1400px){ /*ipad pro 12*/
+
+}
+
+@media all and (min-height: 0px) and (max-height: 325px){ /*iphone SE*/
+
+}
+
+@media all and (min-height: 325px) and (max-height: 500px){ /*iphone 7 e plus*/
+
+}
+
+@media all and (min-height: 740px) and (max-height: 770px){ /*ipad min e normal*/
+
+}
+
+@media all and (width: 1920px) and (height: 1080px){
+
+}

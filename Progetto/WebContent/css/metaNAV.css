@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@media all and (min-width: 0px) and (max-width: 750px){
+	nav #SX{
+		display: none;
+	}
+	
+	nav #DX{
+		justify-content: space-around;
+		width: 100%;
+	}
+}
+
+}

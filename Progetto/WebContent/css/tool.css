@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.tooltiptext {
+	position: absolute;
+	z-index: 1;
+    bottom: 60%;
+    left: 25%;
+	padding: 0 3vw 0 3vw;
+	margin: 0px;
+	width: 15vw;
+    background-color: rgb(45, 156, 66);
+    color: white;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgb(45, 156, 66) transparent transparent transparent;
+}
+
+.visible{
+	display: block;
+}
+
+.invisible{
+	display: none;
+}
